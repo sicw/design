@@ -1,4 +1,4 @@
-package com.xxx.filter.servlet;
+package com.xxx.design.filter.servlet;
 
 import javax.servlet.*;
 import java.io.IOException;

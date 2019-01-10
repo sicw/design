@@ -1,4 +1,4 @@
-package com.xxx.filter.dubbo;
+package com.xxx.design.filter.dubbo;
 
 import javax.servlet.*;
 import java.io.IOException;

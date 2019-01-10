@@ -1,6 +1,8 @@
-import java.beans.PropertyChangeEvent;
-import java.beans.PropertyChangeListener;
-import java.beans.PropertyChangeSupport;
+package com.xxx.design.listener.chageproperty;
+
+import com.xxx.design.listener.changeproperty.MyPropertyChangeEvent;
+import com.xxx.design.listener.changeproperty.MyPropertyChangeListener;
+import com.xxx.design.listener.changeproperty.MyPropertyChangeListenerImpl;
 
 /**
  * 在属性变化时, 触发监听器.
@@ -9,21 +11,17 @@ import java.beans.PropertyChangeSupport;
  * @author sicwen
  * @date 2019/01/10
  */
-public class People2 {
+public class People {
 
-    private final PropertyChangeSupport pcs = new PropertyChangeSupport(this);
+    private MyPropertyChangeListener listener = new MyPropertyChangeListenerImpl();
 
     private String name;
     private int age;
     private int weight;
     private int height;
 
-    public void addPropertyListener(PropertyChangeListener listener){
-        pcs.addPropertyChangeListener(listener);
-    }
-
-    public void addPropertyListener(String propertyName,PropertyChangeListener listener){
-        pcs.addPropertyChangeListener(propertyName, listener);
+    public void addPropertyListener(MyPropertyChangeListener listener){
+        this.listener = listener;
     }
 
     public String getName() {
@@ -33,7 +31,7 @@ public class People2 {
     public void setName(String name) {
         Object oldValue = this.name;
         this.name = name;
-        pcs.firePropertyChange(new PropertyChangeEvent(this,"name",name,oldValue));
+        listener.propertyChange(new MyPropertyChangeEvent(this,"name",name,oldValue));
     }
 
     public int getAge() {
@@ -43,7 +41,7 @@ public class People2 {
     public void setAge(int age) {
         Object oldValue = this.age;
         this.age = age;
-        pcs.firePropertyChange(new PropertyChangeEvent(this,"age",age,oldValue));
+        listener.propertyChange(new MyPropertyChangeEvent(this,"age",age,oldValue));
     }
 
     public int getWeight() {
@@ -53,7 +51,7 @@ public class People2 {
     public void setWeight(int weight) {
         Object oldValue = this.weight;
         this.weight = weight;
-        pcs.firePropertyChange(new PropertyChangeEvent(this,"weight",age,oldValue));
+        listener.propertyChange(new MyPropertyChangeEvent(this,"weight",weight,oldValue));
     }
 
     public int getHeight() {
@@ -63,7 +61,7 @@ public class People2 {
     public void setHeight(int height) {
         Object oldValue = this.height;
         this.height = height;
-        pcs.firePropertyChange(new PropertyChangeEvent(this,"height",height,oldValue));
+        listener.propertyChange(new MyPropertyChangeEvent(this,"height",height,oldValue));
     }
 
     @Override

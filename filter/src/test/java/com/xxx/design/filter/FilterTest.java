@@ -1,7 +1,7 @@
-package com.xxx.filter;
+package com.xxx.design.filter;
 
-import com.xxx.filter.dubbo.DubboFilterChain;
-import com.xxx.filter.servlet.ServletFilterChain;
+import com.xxx.design.filter.dubbo.DubboFilterChain;
+import com.xxx.design.filter.servlet.ServletFilterChain;
 import org.junit.Test;
 
 import javax.servlet.FilterChain;

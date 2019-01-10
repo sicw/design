@@ -1,3 +1,5 @@
+package com.xxx.design.listener.changeproperty;
+
 import java.util.EventObject;
 
 /**
