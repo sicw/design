@@ -26,4 +26,5 @@ public class ListenerTest {
         p.setName("小明");
         p.setWeight(60);
     }
+
 }
