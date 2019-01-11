@@ -11,6 +11,7 @@
   <modules>
     <module>filter</module>
       <module>listener</module>
+    <module>singleton</module>
   </modules>
 
   <name>design</name>
