@@ -12,6 +12,7 @@
     <module>filter</module>
       <module>listener</module>
     <module>singleton</module>
+      <module>proxy</module>
   </modules>
 
   <name>design</name>
