@@ -1,8 +1,12 @@
-package com.xxx.design.filter.aop;
+package com.xxx.design.interceptor;
+
+import com.xxx.design.interceptor.api.MethodInterceptorDemo;
+import com.xxx.design.interceptor.api.MethodInvocationDemo;
 
 import java.lang.reflect.Method;
 import java.util.LinkedList;
 import java.util.List;
+
 
 /**
  * @author sicwen
@@ -43,6 +47,7 @@ public class MethodInvocationDemoImpl implements MethodInvocationDemo {
     public Object proceed() {
         if(currentInterceptorIndex == list.size()-1){
             //调用没有代理时的方法.
+            System.out.println("被代理的方法......");
             return null;
         }
         MethodInterceptorDemo interceptor = list.get(++currentInterceptorIndex);

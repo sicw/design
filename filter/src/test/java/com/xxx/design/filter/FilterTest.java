@@ -1,6 +1,5 @@
 package com.xxx.design.filter;
 
-import com.xxx.design.filter.aop.*;
 import com.xxx.design.filter.dubbo.DubboFilterChain;
 import com.xxx.design.filter.servlet.ServletFilterChain;
 import org.junit.Test;
@@ -29,22 +28,6 @@ public class FilterTest {
         chain.addFilter(new Filter3());
         chain.buildFilterChain(new EmptyDubboFilter()).doFilter(null,null);
     }
-
-    @Test
-    public void testAopInterceptorFilter(){
-        MethodInterceptorDemo interceptor1 = new MethodInterceptorDemoImpl1();
-        MethodInterceptorDemo interceptor2 = new MethodInterceptorDemoImpl2();
-        MethodInterceptorDemo interceptor3 = new MethodInterceptorDemoImpl3();
-
-        MethodInvocationDemoImpl invocation = new MethodInvocationDemoImpl();
-        invocation.addInterceptor(interceptor1);
-        invocation.addInterceptor(interceptor2);
-        invocation.addInterceptor(interceptor3);
-
-        //调用拦截器链
-        invocation.proceed();
-    }
-
 
     private class EmptyDubboFilter implements FilterChain{
         @Override
